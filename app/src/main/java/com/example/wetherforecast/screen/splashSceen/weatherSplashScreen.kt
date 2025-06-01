@@ -9,9 +9,6 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -27,7 +24,6 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.wetherforecast.R
@@ -50,9 +46,11 @@ fun WeatherSplashScreen(navController: NavController){
                 }))
 
         delay(2000L)
-        navController.navigate(WeatherScreen.MainScreen.name)
+
+        navController.navigate("${WeatherScreen.MainScreen.name}/indore")
     } )
-    Surface(modifier = Modifier.padding(30.dp)
+    Surface(modifier = Modifier
+        .padding(30.dp)
         .size(330.dp)
         .scale(scale.value),
         color = Color.White,
